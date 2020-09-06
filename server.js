@@ -20,6 +20,7 @@ var options = {
 https.createServer(options, app).listen(port, function () {
   console.log("https://" + ip.address() + ":" + port + "| start time : " + new Date());
 });
+app.get("/", (req, res) => res.send("Hello World!"));
 
 (function () {
   var childProcess = require("child_process");
