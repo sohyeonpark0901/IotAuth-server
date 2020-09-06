@@ -6,7 +6,7 @@ var ip = require("ip");
 let http = require("http");
 let https = require("https");
 const fs = require("fs");
-middlewareLoad(app);
+
 app.use("/vertify", myRouter);
 
 var options = {
