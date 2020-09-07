@@ -3,7 +3,7 @@ const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
 const { error } = require("console");
-
+var pathOfIndex = path.relative("C:/Users/PK/Desktop/졸업작품/server/", "C:/Users/PK/AppData/Local/Programs/Python/Python37-32/get_avg.py");
 // const { spawn } = require("child_process");
 // const pyProg = spawn("python", ["C:/Users/PK/AppData/Local/Programs/Python/Python37-32/get_avg.py"]);
 
@@ -25,7 +25,7 @@ router.post("/uploadfile", upload.array("userfile", 2), function (req, res) {
 router.get("/machine", function (req, res) {
   try {
     const { spawn } = require("child_process");
-    const pyProg = spawn("python", ["C:/Users/PK/AppData/Local/Programs/Python/Python37-32/get_avg.py"]);
+    const pyProg = spawn("python", [pathOfIndex]);
 
     pyProg.stdout.on("data", function (data) {
       console.log(data);
