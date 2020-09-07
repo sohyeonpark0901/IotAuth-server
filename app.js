@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
 const myRouter = require("./routes");
 var ip = require("ip");
 let http = require("http");
@@ -18,10 +17,9 @@ var options = {
 // http.createServer(app).listen(8080, function () {
 //   console.log("http://" + ip.address() + ":" + 8080 + "| start time : " + new Date());
 // });
-// https.createServer(options, app).listen(port, function (req, res) {
-//   console.log("https://" + ip.address() + ":" + port + "| start time : " + new Date());
-//   //res.send("Hello World!");
-// });
+https.createServer(options, app).listen(9000, function (req, res) {
+  console.log("https://" + ip.address() + ":" + 9000 + "| start time : " + new Date());
+});
 
 (function () {
   var childProcess = require("child_process");
@@ -34,7 +32,3 @@ var options = {
   }
   childProcess.spawn = mySpawn;
 })();
-
-app.listen(port, function () {
-  console.log("server start");
-});
