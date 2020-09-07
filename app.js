@@ -33,9 +33,7 @@ var options = {
   }
   childProcess.spawn = mySpawn;
 })();
-app.get("/", (req, res) => {
-  res.send({ hello: "world" });
-});
+
 app.listen(port, function () {
   console.log("server start");
 });
