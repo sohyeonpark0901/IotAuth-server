@@ -7,8 +7,9 @@ let http = require("http");
 let https = require("https");
 const fs = require("fs");
 const middleware = require("./middleware");
-app.use("/vertify", myRouter);
 middleware(app);
+app.use("/vertify", myRouter);
+
 var options = {
   key: fs.readFileSync("./key.pem", "utf8"),
   cert: fs.readFileSync("./server.crt", "utf8"),
