@@ -17,10 +17,10 @@ var options = {
 // http.createServer(app).listen(8080, function () {
 //   console.log("http://" + ip.address() + ":" + 8080 + "| start time : " + new Date());
 // });
-https.createServer(options, app).listen(port, function (req, res) {
-  console.log("https://" + ip.address() + ":" + port + "| start time : " + new Date());
-  //res.send("Hello World!");
-});
+// https.createServer(options, app).listen(port, function (req, res) {
+//   console.log("https://" + ip.address() + ":" + port + "| start time : " + new Date());
+//   //res.send("Hello World!");
+// });
 
 (function () {
   var childProcess = require("child_process");
@@ -34,6 +34,6 @@ https.createServer(options, app).listen(port, function (req, res) {
   childProcess.spawn = mySpawn;
 })();
 
-// app.listen(9000, function () {
-//   console.log("server start");
-// });
+app.listen(port, function () {
+  console.log("server start");
+});
