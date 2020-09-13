@@ -1,4 +1,9 @@
-const path = require("path");
-//let myPath = path.normalize("C:/Users/PK/AppData/Local/Programs/Python/Python37-32/get_avg.py");
-var pathOfIndex = path.relative("C:/Users/PK/Desktop/졸업작품/server/", "C:/Users/PK/AppData/Local/Programs/Python/Python37-32/get_avg.py");
-console.log(pathOfIndex);
+var zerorpc = require("zerorpc");
+
+var server = new zerorpc.Server({
+  hello: function (name, reply) {
+    reply(null, "Hello, " + name, false);
+  },
+});
+
+server.bind("https://172.31.0.230:443");

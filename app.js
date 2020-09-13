@@ -32,3 +32,7 @@ https.createServer(options, app).listen(9000, function (req, res) {
   }
   childProcess.spawn = mySpawn;
 })();
+
+//app.listen(9000, function () {
+//  console.log("server start");
+//});
