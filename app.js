@@ -18,8 +18,8 @@ var options = {
   cert: fs.readFileSync("./server.crt", "utf8"),
 };
 
-http.createServer(app).listen(22, function () {
-  console.log("http://" + ip.address() + ":" + 22 + "| start time : " + new Date());
+http.createServer(app).listen(8080, function () {
+  console.log("http://" + ip.address() + ":" + 8080 + "| start time : " + new Date());
 });
 // https.createServer(options, app).listen(9000, function (req, res) {
 //   console.log("https://" + ip.address() + ":" + 9000 + "| start time : " + new Date());
