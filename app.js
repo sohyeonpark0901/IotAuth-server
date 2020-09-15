@@ -36,3 +36,8 @@ var options = {
 app.listen(9000, function () {
   console.log("server start");
 });
+
+//테스트를 위해서
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+}
