@@ -18,9 +18,9 @@ var options = {
   cert: fs.readFileSync("./server.crt", "utf8"),
 };
 
-http.createServer(app).listen(80, function () {
-  console.log("http://" + ip.address() + ":" + 80 + "| start time : " + new Date());
-});
+// http.createServer(app).listen(80, function () {
+//   console.log("http://" + ip.address() + ":" + 80 + "| start time : " + new Date());
+// });
 // https.createServer(options, app).listen(9000, function (req, res) {
 //   console.log("https://" + ip.address() + ":" + 9000 + "| start time : " + new Date());
 // });
@@ -37,6 +37,6 @@ http.createServer(app).listen(80, function () {
   childProcess.spawn = mySpawn;
 })();
 
-// app.listen(9000, function () {
-//   console.log("server start");
-// });
+app.listen(9000, function () {
+  console.log("server start");
+});
