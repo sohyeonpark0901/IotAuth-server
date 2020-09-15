@@ -8,6 +8,10 @@ const fs = require("fs");
 const middleware = require("./middleware");
 middleware(app);
 app.use("/vertify", myRouter);
+//테스트를 위해서
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
 var options = {
   key: fs.readFileSync("./key.pem", "utf8"),
@@ -36,8 +40,3 @@ var options = {
 app.listen(9000, function () {
   console.log("server start");
 });
-
-//테스트를 위해서
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-}
