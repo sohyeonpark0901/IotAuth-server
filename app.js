@@ -2,16 +2,11 @@ const express = require("express");
 const app = express();
 const myRouter = require("./routes");
 var ip = require("ip");
-let http = require("http");
 let https = require("https");
 const fs = require("fs");
 const middleware = require("./middleware");
 middleware(app);
-app.use("/vertify", myRouter);
-//테스트를 위해서
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.use("/verify", myRouter);
 
 var options = {
   key: fs.readFileSync("./key.pem", "utf8"),
@@ -21,9 +16,9 @@ var options = {
 // http.createServer(app).listen(80, function () {
 //   console.log("http://" + ip.address() + ":" + 80 + "| start time : " + new Date());
 // });
-// https.createServer(options, app).listen(9000, function (req, res) {
-//   console.log("https://" + ip.address() + ":" + 9000 + "| start time : " + new Date());
-// });
+https.createServer(options, app).listen(9000, function (req, res) {
+  console.log("https://" + ip.address() + ":" + 9000 + "| start time : " + new Date());
+});
 
 (function () {
   var childProcess = require("child_process");
@@ -37,6 +32,6 @@ var options = {
   childProcess.spawn = mySpawn;
 })();
 
-app.listen(9000, function () {
-  console.log("server start");
-});
+// app.listen(9000, function () {
+//   console.log("server start");
+// });
